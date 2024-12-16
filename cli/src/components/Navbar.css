@@ -1,0 +1,111 @@
+.Navbar {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: background-color 0.3s ease;
+}
+
+.Navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar .navbar {
+  background-color: transparent;
+}
+
+.Navbar .navbar-brand {
+  width: 100px;
+}
+
+.Navbar .navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.Navbar .navbar-toggler-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.Navbar .navbar-nav .nav-item {
+  margin-right: 15px;
+}
+
+.Navbar .nav-link {
+  color: #161616;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Navbar .nav-link:hover {
+  color: #292929;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn .bi {
+  vertical-align: middle;
+  color: #161616;
+  font-size: 20px;
+}
+
+.btn .bi:hover {
+  color: #292929;
+}
+
+/* Sticky Styles */
+.Navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar.sticky .navbar {
+  background-color: transparent;
+}
+
+.Navbar.sticky .navbar-brand,
+.Navbar.sticky .navbar-nav .nav-item,
+.Navbar.sticky .btn .bi {
+  color: #161616;
+}
+
+.Navbar.sticky .nav-link:hover,
+.Navbar.sticky .btn .bi:hover {
+  color: #292929;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    margin-right: 0;
+  }
+}

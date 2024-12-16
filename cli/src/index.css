@@ -1,33 +1,28 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  overflow-x: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(to top, #fff 50%, #e9d2fc);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-/* Tambahkan ini di file CSS global Anda */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/* Scrollbar Customization */
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
 }
 
-#root {
-  height: 100%;
-  position: relative;
+body::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-.Particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #5101e3, #8300e7, #a900eb, #cc00ee, #eb00f0);
+  border-radius: 4px;
 }
 
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

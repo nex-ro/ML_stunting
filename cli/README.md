@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# NFT Portfolio Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The NFT Portfolio Landing Page is a web application designed to showcase NFT (Non-Fungible Token) collection and portfolio. I was inspired by an existing Next.js landing page and decided to recreate it using React.js. The landing page provides a visually appealing and user-friendly interface to display NFTs, attracting potential buyers and art enthusiasts. The landing page is built using modern web technologies and is fully responsive for an optimal viewing experience across devices.
 
-## Available Scripts
+![Snapshot nft-portfolio-landing-page vercel app](https://github.com/s-shemmee/NFT-Portfolio-Landing-Page/assets/56132945/81db5ea8-64c8-49af-b9b0-3e39b404f42a)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Showcase NFT collection with stunning visuals.
+- Responsive design for seamless viewing on various devices.
+- Personalized portfolio layout to highlight the most valuable NFTs.
+- Artistic animations and interactive elements for an engaging user experience.
+- Smooth navigation between sections with the Navbar.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies & Tools Used
+- React.js
+- CSS
+- JSX
+- VS Code
+- Other dependencies as required.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Installation and Usage
+## Prerequisites
+- Node.js and npm installed on your system.
 
-### `npm test`
+To use this NFT Portfolio Landing Page, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone the repository or download the source code.
+- Open the project in your preferred code editor.
+- Run `npm install` to install the necessary dependencies.
+- Run `npm start` to start the development server.
+- Open your browser and navigate to `http://localhost:3000` to access the app.
 
-### `npm run build`
+# Demo
+A live demo of the NFT Portfolio Landing Page is available at [LINK TO LIVE DEMO](https://nft-portfolio-landing-page.vercel.app).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Credits
+- The NFT Portfolio Landing Page was inspired by the beautiful Next.js landing page created by [reacthemes](https://themeforest.net/user/reacthemes). I would like to thank them for their amazing work, which served as the inspiration for this recreation using React.js.
+- The NFT Portfolio Landing Page recreation was created by [s-shemmee](https://github.com/s-shemmee) using React.js.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# License
+This project is licensed under the GNU GENERAL PUBLIC LICENSE.

@@ -1,0 +1,226 @@
+.about {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about .container-fluid {
+  padding: 3+0px 0;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.about-title {
+  font-size: 70px;
+  font-weight: 700;
+  color: #000;
+  text-align: start;
+  margin-bottom: 25px;
+  line-height: 1;
+}
+
+.about-title span {
+  background: linear-gradient(to right, #5101e3, #8300e7, #a900eb, #cc00ee, #eb00f0);
+  background-clip: text;
+  color: transparent;
+}
+
+.about-content {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  text-align: start;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.about .about-card {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.about .about-card h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  background: linear-gradient(to right, #5101e3, #8300e7, #a900eb, #cc00ee, #eb00f0);
+  background-clip: text;
+  color: transparent;
+}
+
+.about .about-card p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7b7583;
+  margin-bottom: 0;
+}
+
+.about .boxs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;  
+  margin-top: 50px;
+}
+
+.about .box {
+  background-color: transparent;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .box i {
+  font-size: 58px;
+  background: linear-gradient(to right, #5101e3, #8300e7, #a900eb, #cc00ee, #eb00f0);
+  background-clip: text;
+  color: transparent;  
+  margin-bottom: 20px;
+}
+
+.about .box h2 {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.about .box p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7b7583;
+  margin-bottom: 0;
+}
+
+/* Extra Small Devices (Mobile Phones) */
+@media (max-width: 575.98px) {
+  .about-title {
+    font-size: 50px;
+  }
+
+  .about .about-card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about .about-card h2 {
+    font-size: 25px;
+  }
+
+  .about .about-card p {
+    font-size: 10px;
+  }
+
+  .about .box {
+    padding: 5px;
+  }
+
+  .about .box i {
+    font-size: 40px;
+  }
+
+  .about .box h2 {
+    font-size: 30px;
+  }
+
+  .about .box p {
+    font-size: 12px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .about-title {
+    font-size: 60px;
+  }
+
+  .about .about-card {
+    width: 130px;
+    height: 130px;
+  }
+
+  .about .about-card h2 {
+    font-size: 50px;
+  }
+
+  .about .about-card p {
+    font-size: 14px;
+  }
+}
+
+/* Medium Devices (Laptops and Small Desktops) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .about-title {
+    font-size: 60px;
+  }
+
+  .about .about-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about .about-card h2 {
+    font-size: 30px;
+  }
+
+  .about .about-card p{
+    font-size: 12px;
+  }
+
+  .about .box {
+    padding: 5px;
+  }
+
+  .about .box i {
+    font-size: 40px;
+  }
+
+  .about .box h2 {
+    font-size: 30px;
+  }
+
+  .about .box p {
+    font-size: 12px;
+  }
+}
+
+/* Case between 1059px and 991px */
+@media (min-width: 992px) and (max-width: 1058.98px) {
+  .about-title {
+    font-size: 65px;
+  }
+
+  .about .about-card {
+    width: 135px;
+    height: 135px;
+  }
+
+  .about .about-card h2 {
+    font-size: 50px;
+  }
+
+  .about .about-card p {
+    font-size: 14px;
+  }
+}
