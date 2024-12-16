@@ -1,6 +1,6 @@
 const Main=()=>{
     return(
-        <div>
+        <div style={{background:"white"}}>
             <p>tes</p>
         </div>
     )

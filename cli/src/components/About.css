@@ -4,6 +4,9 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+p{
+  color: red;
+}
 
 .about .container-fluid {
   padding: 3+0px 0;

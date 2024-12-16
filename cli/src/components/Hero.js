@@ -28,7 +28,7 @@ export default function Hero() {
           </svg>
         </div>
         <div className="content">
-          <h1>collect & sell<br /><span>super rare nfts</span></h1>
+          <h1>Periksa Gizi mu <br /><span>Cegah stunting</span></h1>
 
           <div className="container panel">
             <div className="row">
