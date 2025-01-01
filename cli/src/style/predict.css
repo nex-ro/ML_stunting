@@ -1,0 +1,328 @@
+/* Basic reset and container styles */
+.container {
+    min-height: 100vh;
+  }
+  
+  .form-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1.5rem;
+    padding-top: 0px;
+    border-radius: 0.5rem;
+    overflow-y:auto ;
+  }
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+  }
+  .input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+  }
+  .input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+  .gender-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .gender-button {
+    padding: 0.75rem;
+    width: 280px;
+    height: 280px;
+    border-radius: 0.5rem;
+    background-color: #F3F4F6;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .gender-button:hover {
+    background-color: #E5E7EB;
+  }
+  .gender-button.selected {
+    background-color: #DBEAFE;
+    box-shadow: 0 0 0 2px #3B82F6;
+  }
+  .gender-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .gender-icon.selected {
+    fill: #3B82F6;
+  }
+  
+  .gender-icon.unselected {
+    fill: #4B5563;
+  }
+  
+  /* Height slider container */
+  .height-container {
+    position: relative;
+    height: 8rem;
+    background-color: #F3F4F6;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: grab;
+  }
+  
+  .height-container:active {
+    cursor: grabbing;
+  }
+  
+  .height-pointer {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  
+  .height-scale {
+    position: absolute;
+    top: 3.5rem;
+    left: 50%;
+    height: 4rem;
+    user-select: none;
+  }
+  
+  .height-mark {
+    position: absolute;
+    top: 0;
+  }
+  
+  .height-mark.major {
+    height: 2rem;
+    border-left: 2px solid #1F2937;
+  }
+  
+  .height-mark.medium {
+    height: 1.5rem;
+    border-left: 1px solid #4B5563;
+  }
+  
+  .height-mark.minor {
+    height: 1rem;
+    border-left: 1px solid #9CA3AF;
+  }
+  
+  .height-value {
+    position: absolute;
+    bottom: -1.5rem;
+    margin-left: -0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .height-input {
+    width: 5rem;
+    padding: 0.5rem;
+    display: block;
+    text-align: center;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    width: 100%;
+    background-color: #3B82F6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: #2563EB;
+  }
+  
+  /* Prediction result */
+  .result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #F3F4F6;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  
+  .result-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .ruler-scale {
+    will-change: transform;
+  }
+  .ruler-pointer {
+    position: absolute;
+    height: 50px;
+    width: 2px;
+    background: red;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+/* Ruler styling */
+.ruler-container {
+    position: relative;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: grab;
+    margin:10px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ruler-container:active {
+    cursor: grabbing;
+  }
+  
+  .ruler-scale {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    user-select: none;
+    background-color: #fff;
+    padding: 5px 0;
+  }
+  
+  .ruler-mark {
+    position: absolute;
+    top: 10px;
+    width: 1px;
+    background-color: #000;
+  }
+  
+  .ruler-mark.major {
+    height: 20px;
+    width: 1px;
+    background-color: #000;
+  }
+  
+  .ruler-mark.medium {
+    height: 15px;
+    width: 1px;
+    background-color: #666;
+  }
+  
+  .ruler-mark.minor {
+    height: 10px;
+    width: 1px;
+    background-color: #999;
+  }
+  
+  .ruler-number {
+    position: absolute;
+    bottom: -10px;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .ruler-pointer {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #3B82F6;
+    transform: translateX(-50%);
+  }
+  
+  .ruler-pointer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #3B82F6;
+  }
+  
+  .height-value-display {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .height-input {
+    display: block;
+    text-align: center;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .height-input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  .lineLurus{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.hidden {
+    display: none;
+}
+
+.message{
+    display: flex;
+    flex-direction: row;
+}
+.textBubblee::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left:-20px; /* Adjust this value to align the triangle */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 20px solid rgb(254 ,234 ,159);
+    border-bottom: 10px solid transparent;
+
+}
+.choice-box.selected {
+    background-color: #002f61; /* Ubah warna latar belakang untuk pilihan yang dipilih */
+    color: white; /* Ubah warna teks untuk pilihan yang dipilih */
+}
