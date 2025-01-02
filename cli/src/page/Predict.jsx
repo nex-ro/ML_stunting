@@ -5,6 +5,8 @@ import gambar1 from "../style/img/1.png";
 import gambar2 from "../style/img/2.png";
 import gambar3 from "../style/img/3.png";
 import gambar4 from "../style/img/4.png";
+import dokterIMG from "../style/img/dokter.png"
+import { useNavigate } from 'react-router-dom';
 import "../style/predict.css";
 
 const Predict = () => {
@@ -15,6 +17,16 @@ const Predict = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startValue, setStartValue] = useState(0);
   const containerRef = useRef(null);
+  const resetForm = () => {
+    setUmur("");
+    setGender(null);
+    setTinggiBadan(initialValue);
+  };
+  const navigate = useNavigate();
+
+  const sebab = () => {
+    navigate('/penyebab');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,21 +60,51 @@ const Predict = () => {
         title: "Hasil Pemeriksaan Anda",
         html: `
           <div>
-            <p>Hasil prediksi Anda:</p>
-            <strong>${response.data.prediction}</strong>
-            <p>Gunakan hasil ini untuk analisis lebih lanjut.</p>
+            <div class="message">
+              <img src="${dokterIMG}" width="180px" style="padding: 20px;" alt="" />
+              <div class="in-message">
+                <div
+                  class="textBubblee"
+                  style="padding: 10px; margin: 5px; background-color: rgb(254, 234, 159); position: relative;"
+                >
+                  <p style="margin: 0px;">
+                    Berdasarkan hasil pemeriksaan, balita Anda memiliki status gizi 
+                    <strong>${response.data.prediction}</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p>
+              Untuk informasi lebih lanjut mengenai status gizi dari cara penyebab hingga cara pengangan, silakan tekan link 
+              <a id="sebab-link" style="color:#3B82F6;cursor: pointer;">di sini</a>.
+            </p>
           </div>
         `,
         showCancelButton: true,
-        confirmButtonText: "OK",
-        cancelButtonText: "Ulangi",
+        confirmButtonText: "Periksa ulang",
+        cancelButtonText: "Lihat cara mengatasinya",
       }).then((result) => {
         if (result.isConfirmed) {
           console.log("User confirmed the result.");
+          resetForm();
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           console.log("User chose to retry.");
+          resetForm();
         }
       });
+      
+      // Tambahkan event listener untuk link
+      setTimeout(() => {
+        const sebabLink = document.getElementById("sebab-link");
+        if (sebabLink) {
+          sebabLink.addEventListener("click", () => {
+            Swal.close(); // Tutup dialog
+            sebab();      // Panggil fungsi sebab
+          });
+        }
+      }, 0);
+      
+
     } catch (error) {
       const Toast = Swal.mixin({
         toast: true,
@@ -83,6 +125,7 @@ const Predict = () => {
     }
   };
 
+  
   const positionToValue = (clientX) => {
     if (!containerRef.current) return 0;
     const rect = containerRef.current.getBoundingClientRect();
@@ -239,7 +282,13 @@ const Predict = () => {
             Prediksi
           </button>
         </form>
+       
       </div>
+     <div className="outlinefooter">
+     <div className="footer">
+      @2024 Copyright 
+    </div>
+     </div>
     </div>
   );
 };

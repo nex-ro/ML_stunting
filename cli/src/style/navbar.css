@@ -1,8 +1,8 @@
   .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px 20px;
     background-color: #fff;
     top: 0;
     z-index: 1000;
@@ -10,12 +10,12 @@
     z-index: 1000;
   
   }
-  
+
   /* Logo styles */
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #122063;
+    color: #f97316;
     text-decoration: none;
   }
   
@@ -27,6 +27,17 @@
     margin: 0;
     padding: 0;
   }
+  .footer{
+    width: 80%;
+    bottom: 0px;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px dashed #333;
+}
+.outlinefooter{
+    justify-content: center;
+    display: flex;
+}
   
   /* Navbar links */
   .nav-links li a {
@@ -65,4 +76,17 @@
     .navbar {
         justify-content: space-between;
       }
+      .footer{
+        width: 80%;
+       
+    }
+   
+  }
+  @media (max-width: 600px) {
+  
+      .footer{
+        width: 90%;
+       
+    }
+   
   }

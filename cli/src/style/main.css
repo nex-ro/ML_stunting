@@ -1,0 +1,132 @@
+.linked{
+    text-decoration: dotted;
+    color: white;
+    
+}
+.linked:hover{
+    color:#f97316;
+}
+.story-container {
+    background-color: #1C1C1C;
+    width: 100%;
+}
+
+.story-wrapper {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 60px;
+    color: white;
+}
+
+.flex-row {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+}
+
+.content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.image-section {
+    flex: 1;
+}
+
+.story-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.quote-section {
+    border-left: 4px solid #f08080;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.quote-text {
+    font-size: 18px;
+    font-style: italic;
+    color: #f08080;
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+.quote-author {
+    color: #888;
+    margin: 0;
+    font-size: 16px;
+}
+
+.story-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.factIndo {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Ubah ke fixed untuk efek parallax */
+    background-position: center center;
+    position: relative; /* Tambahkan position relative */
+    z-index: 1; /* Pastikan z-index teratur */
+}
+
+/* Optional: Tambahkan overlay untuk meningkatkan keterbacaan teks */
+.factIndo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: -1;
+}
+
+/* Pastikan konten di dalam .factIndo memiliki proper positioning */
+.factIndo p {
+    position: relative;
+    z-index: 2;
+    color: white;
+    /* Tambahkan styling lain yang diperlukan */
+}
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1024px) {
+    .story-wrapper {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flex-row {
+        flex-direction: column;
+    }
+    
+    .story-wrapper {
+        padding: 30px;
+    }
+    .content-section,
+    .image-section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .story-wrapper {
+        padding: 20px;
+    }
+    
+    .story-text,
+    .quote-text {
+        font-size: 16px;
+    }
+}

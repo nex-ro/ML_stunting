@@ -1,6 +1,7 @@
 import React from 'react';
 import "../style/navbar.css"
 import { useNavigate } from 'react-router-dom';
+import Container from './container';
 const Navbar = () => {
     const navigate = useNavigate();
 
@@ -17,23 +18,25 @@ const Navbar = () => {
         navigate('/predict');
       };
   return (
-    <nav className="navbar">
-      <div className="logo" onClick={home}>Cegah Stunting</div>
+    <Container>
+        <nav className="navbar">
+      <div style={{cursor: "pointer",}} className="logo" onClick={home}>Cegah Stunting</div>
       <ul className="nav-links">
         <li>
-          <a onClick={home}>Home</a>
+          <a style={{cursor: "pointer",}} onClick={home}>Home</a>
         </li>
         <li>
-          <a onClick={periksa}>Periksa</a>
+          <a style={{cursor: "pointer",}} onClick={periksa}>Periksa</a>
         </li>
         <li>
-          <a onClick={cegah}>Mencegah</a>
+          <a onClick={cegah} style={{cursor: "pointer",}}>Mencegah</a>
         </li>
         <li>
-          <a onClick={atasi}>Mengatasi</a>
+          <a style={{cursor: "pointer",}} onClick={atasi}>Mengatasi</a>
         </li>
       </ul>
     </nav>
+    </Container>
   );
 };
 
