@@ -1,5 +1,5 @@
 .linked{
-    text-decoration: dotted;
+    text-decoration: underline;
     color: white;
     
 }
@@ -17,11 +17,22 @@
     margin-left: auto;
     padding: 60px;
     color: white;
+    position: relative;
 }
 
+.footer{
+    width: 80%;
+    bottom: 0px;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px dashed #333;
+}
+.outlinefooter{
+    justify-content: center;
+    display: flex;
+}
 .flex-row {
     display: flex;
-    width: 100%;
     gap: 40px;
 }
 
@@ -30,28 +41,52 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    align-items:"center"
 }
-
+.orange{
+    color: #f97316;
+}
+.centeredinImg{
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxCenteredinImg{
+    max-width: 500px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #f97316;
+}
 .image-section {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .story-text {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin: 0;
 }
 
 .quote-section {
-    border-left: 4px solid #f08080;
+    border-left: 4px solid #f97316;
     padding-left: 20px;
     margin: 20px 0;
+}
+.orange{
+    color: #f97316;
 }
 
 .quote-text {
     font-size: 18px;
     font-style: italic;
-    color: #f08080;
+    color: #f97316;
     margin: 0 0 10px 0;
     line-height: 1.6;
 }
@@ -70,17 +105,15 @@
 }
 
 .factIndo {
-    height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Ubah ke fixed untuk efek parallax */
+    background-attachment: fixed;
     background-position: center center;
-    position: relative; /* Tambahkan position relative */
-    z-index: 1; /* Pastikan z-index teratur */
+    position: relative; 
+    z-index: 1; 
 }
 
-/* Optional: Tambahkan overlay untuk meningkatkan keterbacaan teks */
 .factIndo::before {
     content: '';
     position: absolute;
@@ -88,17 +121,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: -1;
 }
 
-/* Pastikan konten di dalam .factIndo memiliki proper positioning */
 .factIndo p {
     position: relative;
     z-index: 2;
     color: white;
-    /* Tambahkan styling lain yang diperlukan */
 }
+
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 1024px) {
     .story-wrapper {

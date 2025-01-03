@@ -42,20 +42,56 @@ const Predict = () => {
           toast.onmouseleave = Swal.resumeTimer;
         },
       });
-
+  
       Toast.fire({
         icon: "error",
         title: "Silakan pilih jenis kelamin",
       });
       return;
     }
+  
     try {
       const response = await axios.post("http://127.0.0.1:5000/predict", {
         umur: parseInt(umur),
         jenis_kelamin: gender === "male" ? 0 : 1,
         tinggi_badan: parseFloat(tinggiBadan),
       });
-
+  
+      // Get recommendations based on prediction
+      const getRecommendations = (status) => {
+        const recommendations = {
+          "Tinggi": `
+            <ul style="text-align: left; margin-top: 10px;">
+              <li>Pertahankan pola makan sehat dan seimbang</li>
+              <li>Lakukan pemantauan berat badan secara rutin</li>
+              <li>Pastikan aktivitas fisik yang cukup</li>
+              <li>Konsultasikan dengan dokter untuk pemantauan pertumbuhan</li>
+            </ul>`,
+          "Normal": `
+            <ul style="text-align: left; margin-top: 10px;">
+              <li>Pertahankan pola makan saat ini</li>
+              <li>Berikan ASI eksklusif (untuk bayi < 6 bulan)</li>
+              <li>Terapkan pola makan gizi seimbang</li>
+              <li>Lakukan pemeriksaan rutin ke Posyandu</li>
+            </ul>`,
+          "Stunted": `
+            <ul style="text-align: left; margin-top: 10px;">
+              <li>Tingkatkan asupan protein hewani dan nabati</li>
+              <li>Berikan suplemen vitamin A dan zinc sesuai anjuran dokter</li>
+              <li>Pastikan pemberian makanan pendamping ASI yang tepat</li>
+              <li>Rutin melakukan pemeriksaan ke dokter anak</li>
+            </ul>`,
+          "Severely Stunted": `
+            <ul style="text-align: left; margin-top: 10px;">
+              <li>Segera konsultasi dengan dokter anak</li>
+              <li>Ikuti program pemberian makanan tambahan dari puskesmas</li>
+              <li>Berikan makanan tinggi protein dan mikronutrien</li>
+              <li>Pantau pertumbuhan secara intensif</li>
+            </ul>`
+        };
+        return recommendations[status] || "";
+      };
+  
       Swal.fire({
         title: "Hasil Pemeriksaan Anda",
         html: `
@@ -63,10 +99,7 @@ const Predict = () => {
             <div class="message">
               <img src="${dokterIMG}" width="180px" style="padding: 20px;" alt="" />
               <div class="in-message">
-                <div
-                  class="textBubblee"
-                  style="padding: 10px; margin: 5px; background-color: rgb(254, 234, 159); position: relative;"
-                >
+                <div class="textBubblee" style="padding: 10px; margin: 5px; background-color: rgb(254, 234, 159); position: relative;">
                   <p style="margin: 0px;">
                     Berdasarkan hasil pemeriksaan, balita Anda memiliki status gizi 
                     <strong>${response.data.prediction}</strong>
@@ -74,8 +107,12 @@ const Predict = () => {
                 </div>
               </div>
             </div>
+            <div style="margin-top: 5px; margin-bottom:15px; ">
+              <strong>Rekomendasi:</strong>
+              ${getRecommendations(response.data.prediction)}
+            </div>
             <p>
-              Untuk informasi lebih lanjut mengenai status gizi dari cara penyebab hingga cara pengangan, silakan tekan link 
+              Untuk informasi lebih lanjut mengenai status gizi dari cara penyebab hingga cara penanganan, silakan tekan link 
               <a id="sebab-link" style="color:#3B82F6;cursor: pointer;">di sini</a>.
             </p>
           </div>
@@ -85,26 +122,22 @@ const Predict = () => {
         cancelButtonText: "Lihat cara mengatasinya",
       }).then((result) => {
         if (result.isConfirmed) {
-          console.log("User confirmed the result.");
           resetForm();
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-          console.log("User chose to retry.");
           resetForm();
         }
       });
       
-      // Tambahkan event listener untuk link
       setTimeout(() => {
         const sebabLink = document.getElementById("sebab-link");
         if (sebabLink) {
           sebabLink.addEventListener("click", () => {
-            Swal.close(); // Tutup dialog
-            sebab();      // Panggil fungsi sebab
+            Swal.close();
+            sebab();
           });
         }
       }, 0);
-      
-
+  
     } catch (error) {
       const Toast = Swal.mixin({
         toast: true,
@@ -117,14 +150,13 @@ const Predict = () => {
           toast.onmouseleave = Swal.resumeTimer;
         },
       });
-
+  
       Toast.fire({
         icon: "error",
         title: error.response?.data?.error || error.message,
       });
     }
   };
-
   
   const positionToValue = (clientX) => {
     if (!containerRef.current) return 0;

@@ -9,10 +9,7 @@ const Navbar = () => {
       navigate('/');
     };
     const cegah = () => {
-        navigate('/mencegah');
-      };
-      const atasi = () => {
-        navigate('/mengatasi');
+        navigate('/pencegahan');
       };
     const periksa = () => {
         navigate('/predict');
@@ -29,10 +26,7 @@ const Navbar = () => {
           <a style={{cursor: "pointer",}} onClick={periksa}>Periksa</a>
         </li>
         <li>
-          <a onClick={cegah} style={{cursor: "pointer",}}>Mencegah</a>
-        </li>
-        <li>
-          <a style={{cursor: "pointer",}} onClick={atasi}>Mengatasi</a>
+          <a onClick={cegah} style={{cursor: "pointer",}}>Mencegah dan mengatasi</a>
         </li>
       </ul>
     </nav>

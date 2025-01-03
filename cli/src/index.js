@@ -7,7 +7,7 @@ import Main from './page/Main';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './component/navbar';
-
+import Pencegahan from './page/pencegahan';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -16,6 +16,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/predict" element={<Predict/>} />
+        <Route path="/pencegahan" element={<Pencegahan/>} />
+
       </Routes>
     </Router>
   </React.StrictMode>
