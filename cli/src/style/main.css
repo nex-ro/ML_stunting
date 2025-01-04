@@ -162,3 +162,137 @@
         font-size: 16px;
     }
 }
+.tinggi-container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 4rem 1rem;
+  }
+  
+  .tinggi-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tinggi-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Header Styles */
+  .header-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f97316;
+    margin-bottom: 1rem;
+  }
+  
+  .main-description {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Grid Layout */
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Card Styles */
+  .content-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f97316;
+    margin-bottom: 1rem;
+  }
+  
+  /* List Styles */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+  
+  .feature-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #f97316;
+    font-weight: bold;
+  }
+  
+  /* Info Box Styles */
+  .info-box {
+    background-color: #fff7ed;
+    border: 1px solid #ffedd5;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .info-box p {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .main-title {
+      font-size: 2rem;
+    }
+  
+    .tinggi-container {
+      padding: 2rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-title {
+      font-size: 1.75rem;
+    }
+  
+    .main-description {
+      font-size: 1rem;
+    }
+  
+    .section-title {
+      font-size: 1.25rem;
+    }
+  
+    .content-card {
+      padding: 1rem;
+    }
+  }

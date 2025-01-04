@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import Card from "./Card"
 import gambar4 from "../style/img/4.png";
+import Tinggi from './Tinggi';
+import Normal from './Normal';
+import Stunted from './Stunted';
+import SeverelyStunted from './SeverlyStunted';
 const TabInterface = () => {
   const [activeTab, setActiveTab] = useState('tinggi');
 
   const tabContent = {
-    tinggi: ( <Card 
-      title="Example Card"
-      description="This is a sample card description."
-      imageUrl={gambar4}
-    />),
-    normal: "Informasi tentang status normal",
-    stunted: "Informasi tentang status stunted",
-    severelyStunted: "Informasi tentang status severely stunted",
+    tinggi: ( <Tinggi/>),
+    normal: (<Normal/>),
+    stunted:(<Stunted/>),
+    severelyStunted: (<SeverelyStunted/>),
   };
 
   const style = `
@@ -55,7 +55,7 @@ const TabInterface = () => {
     }
 
     .tab.active {
-      background: #9c27b0;
+      background: #f97316;
     }
 
     .tab:hover {
@@ -63,13 +63,13 @@ const TabInterface = () => {
     }
 
     .tab.active:hover {
-      background: #9c27b0;
+      background: #f97316;
     }
 
     .content {
       padding: 20px;
-      background: #1a1a1a;
-      color: white;
+      box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
+      color: black;
       border-radius: 10px;
     }
   `;

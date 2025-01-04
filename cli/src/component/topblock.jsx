@@ -20,7 +20,7 @@ const Content = styled.div`
   max-width: 600px;
   padding: 100px 0px;
   
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     width: 100%;
     padding: 2rem 0;
     margin-top: 2rem;
@@ -92,24 +92,14 @@ const Buttons = styled.div`
 `;
 
 const Illustration = styled.div`
-  min-width: 400px; // Set minimum width
-  max-width: 600px; // Set maximum width
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    min-width: 320px; // Slightly smaller minimum width for mobile
-    width: 90%; // Take up most of the container width
-    margin: 0 auto; // Center the illustration
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 
   img {
-    width: 100%;
-    min-width: 320px; // Minimum image width
+    max-width: 100%;
     height: auto;
-    object-fit: cover; // Maintain aspect ratio
     margin: 20px;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -117,7 +107,6 @@ const Illustration = styled.div`
 
     @media (max-width: 768px) {
       margin: 0;
-      min-width: 300px; // Slightly smaller minimum width for mobile
     }
   }
 `;

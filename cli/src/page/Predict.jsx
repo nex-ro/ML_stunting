@@ -25,7 +25,7 @@ const Predict = () => {
   const navigate = useNavigate();
 
   const sebab = () => {
-    navigate('/penyebab');
+    navigate('/Pencegahan');
   };
 
   const handleSubmit = async (e) => {
@@ -119,7 +119,6 @@ const Predict = () => {
         `,
         showCancelButton: true,
         confirmButtonText: "Periksa ulang",
-        cancelButtonText: "Lihat cara mengatasinya",
       }).then((result) => {
         if (result.isConfirmed) {
           resetForm();
