@@ -8,6 +8,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './component/navbar';
 import Pencegahan from './page/pencegahan';
+import History from './page/History';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -17,6 +18,8 @@ root.render(
         <Route path="/" element={<Main/>} />
         <Route path="/predict" element={<Predict/>} />
         <Route path="/pencegahan" element={<Pencegahan/>} />
+        <Route path="/history" element={<History/>} />
+
 
       </Routes>
     </Router>

@@ -1,13 +1,15 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { getDatabase, ref as dbRef, push } from "firebase/database";
 import gambar1 from "../style/img/1.png";
 import gambar2 from "../style/img/2.png";
 import gambar3 from "../style/img/3.png";
 import gambar4 from "../style/img/4.png";
-import dokterIMG from "../style/img/dokter.png"
+import dokterIMG from "../style/img/dokter.png";
 import { useNavigate } from 'react-router-dom';
 import "../style/predict.css";
+import firebaseApp from "../../src/configuration";
 
 const Predict = () => {
   const initialValue = 54;
@@ -16,13 +18,17 @@ const Predict = () => {
   const [tinggiBadan, setTinggiBadan] = useState(initialValue);
   const [isDragging, setIsDragging] = useState(false);
   const [startValue, setStartValue] = useState(0);
+  const [nama, setNama] = useState("");
+
   const containerRef = useRef(null);
+  const navigate = useNavigate();
+
   const resetForm = () => {
+    setNama("");
     setUmur("");
     setGender(null);
     setTinggiBadan(initialValue);
   };
-  const navigate = useNavigate();
 
   const sebab = () => {
     navigate('/Pencegahan');
@@ -30,6 +36,26 @@ const Predict = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!nama.trim()) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+    
+      Toast.fire({
+        icon: "error",
+        title: "Silakan masukkan nama",
+      });
+      return;
+    }
+    
     if (!gender) {
       const Toast = Swal.mixin({
         toast: true,
@@ -51,13 +77,38 @@ const Predict = () => {
     }
   
     try {
+      const genderValue = gender === "male" ? 1 : 0;
+
+      // Make prediction request
       const response = await axios.post("http://127.0.0.1:5000/predict", {
         umur: parseInt(umur),
-        jenis_kelamin: gender === "male" ? 0 : 1,
+        jenis_kelamin: genderValue,
         tinggi_badan: parseFloat(tinggiBadan),
       });
-  
-      // Get recommendations based on prediction
+
+      // Save to Firebase
+      const database = getDatabase(firebaseApp);
+      const pemeriksaanRef = dbRef(database, 'pemeriksaan');
+      
+      // Create data object
+      const pemeriksaanData = {
+        nama: nama,
+        umur: umur,
+        jenis_kelamin: genderValue.toString(),
+        tinggi: tinggiBadan.toString(),
+        status_prediksi: response.data.prediction,
+        tanggal: new Date().toISOString()
+      };
+
+      // Push data to Firebase
+      try {
+        await push(pemeriksaanRef, pemeriksaanData);
+        console.log('Data successfully saved to Firebase');
+      } catch (firebaseError) {
+        console.error('Firebase save error:', firebaseError);
+        throw new Error('Failed to save data to Firebase');
+      }
+
       const getRecommendations = (status) => {
         const recommendations = {
           "Tinggi": `
@@ -91,9 +142,9 @@ const Predict = () => {
         };
         return recommendations[status] || "";
       };
-  
+
       Swal.fire({
-        title: "Hasil Pemeriksaan Anda",
+        title: `Hasil Pemeriksaan ${nama}`,
         html: `
           <div>
             <div class="message">
@@ -136,7 +187,7 @@ const Predict = () => {
           });
         }
       }, 0);
-  
+
     } catch (error) {
       const Toast = Swal.mixin({
         toast: true,
@@ -156,7 +207,7 @@ const Predict = () => {
       });
     }
   };
-  
+
   const positionToValue = (clientX) => {
     if (!containerRef.current) return 0;
     const rect = containerRef.current.getBoundingClientRect();
@@ -233,7 +284,6 @@ const Predict = () => {
     if (isSelected) {
       return <img src={type === "male" ? gambar2 : gambar4} alt="" width="100%" />;
     }
-
     return <img src={type === "male" ? gambar1 : gambar3} width="100%" />;
   };
 
@@ -242,6 +292,17 @@ const Predict = () => {
       <div className="form-card">
         <h1 className="title">Periksa Status Gizi Anak</h1>
         <form onSubmit={handleSubmit} className="form">
+          <div className="form-group">
+            <label className="label">Nama:</label>
+            <input
+              type="text"
+              value={nama}
+              onChange={(e) => setNama(e.target.value)}
+              required
+              className="input"
+              placeholder="Masukkan nama anak"
+            />
+          </div>
           <div className="form-group">
             <label className="label">Umur (bulan):</label>
             <input
@@ -313,13 +374,12 @@ const Predict = () => {
             Prediksi
           </button>
         </form>
-       
       </div>
-     <div className="outlinefooter">
-     <div className="footer">
-      @2024 Copyright 
-    </div>
-     </div>
+      <div className="outlinefooter">
+        <div className="footer">
+          @2024 Copyright 
+        </div>
+      </div>
     </div>
   );
 };

@@ -14,6 +14,9 @@ const Navbar = () => {
     const periksa = () => {
         navigate('/predict');
       };
+      const history = () => {
+        navigate('/history');
+      };
   return (
     <Container>
         <nav className="navbar">
@@ -27,6 +30,9 @@ const Navbar = () => {
         </li>
         <li>
           <a onClick={cegah} style={{cursor: "pointer",}}>Mencegah dan mengatasi</a>
+        </li>
+        <li>
+          <a onClick={history} style={{cursor: "pointer",}}>History</a>
         </li>
       </ul>
     </nav>

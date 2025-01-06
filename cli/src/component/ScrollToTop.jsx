@@ -17,7 +17,6 @@ const ScrollUpContainer = styled.div`
   visibility: ${(props) => (props.show ? "visible" : "hidden")};
   opacity: ${(props) => (props.show ? "1" : "0")};
   display: flex;
-
   &:hover,
   &:active,
   &:focus {

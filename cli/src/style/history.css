@@ -1,0 +1,142 @@
+/* Container Styling */
+.history-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  .title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Summary Section */
+  .summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .summary p {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  /* Table Styling */
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  .history-table th, .history-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .history-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .history-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .history-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .no-data {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+  }
+  
+  /* Status Styling */
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  
+  .status-high {
+    background-color: #ffc107; /* Yellow */
+  }
+  
+  .status-low {
+    background-color: #fd7e14; /* Orange */
+  }
+  
+  .status-severe {
+    background-color: #dc3545; /* Red */
+  }
+  
+  .status-normal {
+    background-color: #28a745; /* Green */
+  }
+  
+  .status-unknown {
+    background-color: #6c757d; /* Gray */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .summary {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .summary p {
+      margin-bottom: 10px;
+    }
+  
+    .history-table th, .history-table td {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  }
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .error-container {
+    text-align: center;
+    color: #dc3545;
+    margin-top: 50px;
+  }
+  
